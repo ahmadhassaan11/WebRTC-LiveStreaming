@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebRTC Video Call</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333; /* Text color */
+      }
+      h2 {
+        margin-top: 20px;
+        font-family: "Helvetica", sans-serif; /* New font */
+        color: #117041; /* New text color */
+      }
+      .videos {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+      .videos span {
+        text-align: center;
+      }
+      video {
+        width: 300px;
+        height: auto;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #228337;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      button:disabled {
+        background-color: #6c8177;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>1. Turn on your Camera</h2>
+    <div class="videos">
+      <span>
+        <h3>Your Video Here</h3>
+        <video id="webcamVideo" autoplay playsinline></video>
+      </span>
+      <span>
+        <h3>Reciever's Video Here</h3>
+        <video id="remoteVideo" autoplay playsinline></video>
+      </span>
+    </div>
+
+    <button id="webcamButton">Start Video Call</button>
+    <h2>2. Create a new Call</h2>
+    <button id="callButton" disabled>Offer to join Video Call</button>
+
+    <h2>3. Join a Call</h2>
+    <p>
+      For testing, You can Answer the call from a different browser window or
+      device
+    </p>
+
+    <input id="callInput" />
+    <button id="answerButton" disabled>Join Call</button>
+
+    <h2>4. Hangup</h2>
+    <button id="hangupButton" disabled>End Call</button>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
